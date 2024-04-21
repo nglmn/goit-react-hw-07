@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/filtersSlice';
 import './SearchBox.css';
+import { selectFilter } from '../../redux/selectors';
 
 const SearchBox = () => {
-    const filterUsers = useSelector(state => state.filters.filters.name);
+    const filterUsers = useSelector(selectFilter);
     const dispatch = useDispatch();
 
     function showFilteredUsers(e) {
